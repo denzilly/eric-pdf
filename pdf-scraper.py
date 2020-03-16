@@ -17,16 +17,12 @@ from readers import read_page_new
 def gen_file_list(query):
 
     filename_list = []
-
-    for file in os.listdir(os.getcwd() + "\\data\\"):
+    print(os.getcwd())
+    for file in os.listdir(os.getcwd() + "\\eric-pdf\\data\\"):
         if fnmatch.fnmatchcase(file, f"*{query}*"):
             filename_list.append(file)
 
     return(filename_list)
-
-
-
-
 
 
 
@@ -41,9 +37,9 @@ def write_to_excel(RBS_list):
 
 ################## NEW #############################
     for x in RBS_list:
-        row_list.append(read_page_new("eric-pdf\\data\\" + x))
+        row_list.append(read_page_new(os.getcwd() + "\\eric-pdf\\data\\" + x))
 
-    with xlsxwriter.Workbook('output\\NEW.xlsx') as workbook:
+    with xlsxwriter.Workbook(os.getcwd() + '\\eric-pdf\\output\\NEW.xlsx') as workbook:
         new_sites = workbook.add_worksheet()
 
         for row_num, data in enumerate(row_list):
