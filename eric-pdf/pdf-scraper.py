@@ -25,8 +25,8 @@ def gen_file_list(query):
     return(filename_list)
 
 
-
-def write_to_excel(RBS_list):
+#Option 1 = RBS, Option 2 = SWAP, Option 3 = EXP
+def write_to_excel(RBS_list, option):
 
 
     headers = ["siteID", "Date"]
@@ -36,6 +36,8 @@ def write_to_excel(RBS_list):
 
 
 ################## NEW #############################
+if (option = 1):
+
     for x in RBS_list:
         row_list.append(read_page_new(os.getcwd() + "\\data\\" + x))
 
@@ -53,10 +55,13 @@ def write_to_excel(RBS_list):
 
 
 
+
+
+
 if __name__ == '__main__':
 
     RBS_list = gen_file_list("RBS")
-    #SWAP_list = gen_file_list("Swap")
+    SWAP_list = gen_file_list("Swap")
     #EXP_list = gen_file_list("Exp")
 
-    write_to_excel(RBS_list)
+    write_to_excel(RBS_list, 1)
