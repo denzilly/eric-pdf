@@ -8,3 +8,7 @@ How to operate:
 2. in command prompt, run "python setup.py install --user" to install required dependencies
 3. cd to the eric-pdf folder
 4. run the pdf-scraper by entering the command "python pdf-scraper.py"
+
+
+
+TEST CHANGES
