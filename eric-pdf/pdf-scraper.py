@@ -50,7 +50,12 @@ def write_to_excel(RBS_list, option):
                 new_sites.write_row(row_num, 0, data)
 
 
+    if (option == 2):
+        print("not yet implemented")
 
+
+    if (option == 3):
+        print("not yet implemented")
 
 
 
