@@ -14,6 +14,8 @@ from readers import read_page_new
 
 
 
+
+
 def gen_file_list(query):
 
     filename_list = []
@@ -36,16 +38,16 @@ def write_to_excel(RBS_list, option):
 
 
 ################## NEW #############################
-if (option = 1):
+    if (option == 1):
 
-    for x in RBS_list:
-        row_list.append(read_page_new(os.getcwd() + "\\data\\" + x))
+        for x in RBS_list:
+            row_list.append(read_page_new(os.getcwd() + "\\data\\" + x))
 
-    with xlsxwriter.Workbook(os.getcwd() + '\\output\\NEW.xlsx') as workbook:
-        new_sites = workbook.add_worksheet()
+        with xlsxwriter.Workbook(os.getcwd() + '\\output\\NEW.xlsx') as workbook:
+            new_sites = workbook.add_worksheet()
 
-        for row_num, data in enumerate(row_list):
-            new_sites.write_row(row_num, 0, data)
+            for row_num, data in enumerate(row_list):
+                new_sites.write_row(row_num, 0, data)
 
 
 
@@ -61,7 +63,10 @@ if (option = 1):
 if __name__ == '__main__':
 
     RBS_list = gen_file_list("RBS")
-    SWAP_list = gen_file_list("Swap")
+    #SWAP_list = gen_file_list("Swap")
     #EXP_list = gen_file_list("Exp")
+
+    print("Which option?")
+    option = input()
 
     write_to_excel(RBS_list, 1)
