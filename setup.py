@@ -7,5 +7,5 @@ setup(
    author='Bart Timmer',
    author_email='bchtimmer@gmail.com',
    packages=['eric-pdf'],  #same as name
-   install_requires=['PyPDF2', 'pandas', 'tabula'], #external packages as dependencies
+   install_requires=['PyPDF2', 'pandas', 'tabula', 'tabula-py', 'xlsxwriter'], #external packages as dependencies
 )
