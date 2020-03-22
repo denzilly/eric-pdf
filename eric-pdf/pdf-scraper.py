@@ -38,6 +38,7 @@ def write_to_excel(RBS_list, option):
 
 
 ################## NEW #############################
+    #new
     if (option == 1):
 
         for x in RBS_list:
@@ -49,11 +50,19 @@ def write_to_excel(RBS_list, option):
             for row_num, data in enumerate(row_list):
                 new_sites.write_row(row_num, 0, data)
 
-
+    #swap
     if (option == 2):
+        for x in RBS_list:
+            row_list.append(read_page_new(os.getcwd() + "\\data\\" + x))
+
+
+
         print("not yet implemented")
 
 
+
+
+    #Ex
     if (option == 3):
         print("not yet implemented")
 
